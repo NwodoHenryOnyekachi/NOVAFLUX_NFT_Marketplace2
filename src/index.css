@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-void: #08080d;
+  --color-surface: #0e0e1a;
+  --color-elevated: #141428;
+  --color-violet: #7c3aed;
+  --color-violet-bright: #8b5cf6;
+  --color-violet-light: #a78bfa;
+  --color-cyan: #22d3ee;
+  --color-cyan-dark: #06b6d4;
+  --color-text-primary: #f1f0ff;
+  --color-text-muted: #9ca3af;
+  --color-text-dim: #4b5563;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124,58,237,0.25) transparent;
+}
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.25); border-radius: 4px; }
+
+body {
+  background-color: #08080d;
+  color: #f1f0ff;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 { font-family: 'Space Grotesk', sans-serif; }
+
+/* Glass */
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.glass-violet {
+  background: rgba(124,58,237,0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(124,58,237,0.2);
+}
+
+/* Buttons */
+.btn-violet {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  border: 1px solid rgba(167,139,250,0.3);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-violet:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  box-shadow: 0 0 32px rgba(124,58,237,0.5);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #f1f0ff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(124,58,237,0.4);
+}
+.btn-cyan {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  border: 1px solid rgba(34,211,238,0.3);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-cyan:hover {
+  box-shadow: 0 0 24px rgba(34,211,238,0.4);
+  transform: translateY(-1px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #c4b5fd 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f9a8d4 0%, #c4b5fd 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(124,58,237,0.25);
+}
+
+/* NFT card overlay */
+.nft-overlay {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.nft-card:hover .nft-overlay { opacity: 1; }
+
+/* Glows */
+.violet-glow { box-shadow: 0 0 60px rgba(124,58,237,0.4); }
+.cyan-glow { box-shadow: 0 0 40px rgba(34,211,238,0.25); }
+.soft-glow { box-shadow: 0 0 100px rgba(124,58,237,0.15); }
+
+/* Tabs */
+.tab-active {
+  color: #a78bfa;
+  border-bottom: 2px solid #7c3aed;
+  font-weight: 600;
+}
+.tab-inactive {
+  color: #9ca3af;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s;
+}
+.tab-inactive:hover { color: #e5e7eb; }
+
+/* Wallet modal backdrop */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Scrollbar hide for specific containers */
+.scroll-hide { scrollbar-width: none; }
+.scroll-hide::-webkit-scrollbar { display: none; }
+
+/* Mini chart */
+.mini-up { color: #10b981; }
+.mini-down { color: #ef4444; }
+
+/* Activity pill */
+.pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.02em;
+}
+.pill-sale { background: rgba(16,185,129,0.15); color: #34d399; }
+.pill-listing { background: rgba(124,58,237,0.15); color: #a78bfa; }
+.pill-offer { background: rgba(34,211,238,0.12); color: #67e8f9; }
+.pill-bid { background: rgba(251,191,36,0.12); color: #fbbf24; }
+.pill-transfer { background: rgba(255,255,255,0.06); color: #9ca3af; }
+
+/* Floating info card */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float-anim { animation: float 4s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* Stat bar fill */
+.trait-bar-fill {
+  background: linear-gradient(90deg, #7c3aed, #22d3ee);
+  border-radius: 99px;
+  height: 4px;
+  transition: width 0.6s ease;
+}

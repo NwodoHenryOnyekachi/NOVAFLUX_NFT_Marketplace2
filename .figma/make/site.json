@@ -1,0 +1,10 @@
+{
+  "description": "Discover, collect, and trade unique digital art in a premium NFT marketplace designed for artists and collectors seeking a modern, immersive experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
